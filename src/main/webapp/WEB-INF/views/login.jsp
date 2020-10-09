@@ -1,44 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-
-
+    <!--  для правильной загрузки css  -->
+    <link href="<%=request.getContextPath()%>/resources/css/home.css" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
 </head>
 
 <body>
-
-	<c:if test="${not empty error}">
-		${error}
-	</c:if>
-
-
-	<form name='form_login' action="login" method='POST'>
-		<table>
-			<tr>
-				<td>User:</td>
-				<td><input type='text' name='user_login' value=''></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type='password' name='password_login' /></td>
-			</tr>
-			<tr>
-				<td><input name="submit" type="submit" value="submit" /></td>
-			</tr>
-		</table>
-	</form>
-
-
-
+<form method="POST" action="login" class="box login">
+    <fieldset class="boxBody">
+        <label> Username </label> <input type='text' name='user_login' value=''>
+        <label> Password </label> <input type='password' name='password_login'/>
+    </fieldset>
+    <footer>
+        <input type="submit" class="btnLogin" value="Submit">
+        <c:if test="${not empty error}">
+            <span class="error">${error}</span>
+        </c:if>
+    </footer>
+</form>
 </body>
 </html>
