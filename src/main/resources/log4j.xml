@@ -32,6 +32,10 @@
 		<level value="info" />
 	</logger>
 
+	<logger name="org.springframework.security.web.FilterChainProxy">
+		<level value="debug" />
+	</logger>
+
 	<!-- Root Logger -->
 	<root>
 		<priority value="warn" />
