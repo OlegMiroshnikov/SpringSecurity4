@@ -27,6 +27,9 @@
 
 		<!-- выключаем защиту от CSRF атак (чтобы не отвлекаться на ее настройку) -->
 		<csrf disabled="true"/>
+
+		<remember-me />
+
 	</http>
 
 	<!-- начиная с версии Spring 5 нужно указывать кодировщик пароля, иначе будет оишбика There is no PasswordEncoder mapped for the id "null" -->
@@ -35,7 +38,7 @@
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="user" password="user" authorities="ROLE_USER"  />
+				<user name="user" password="user" authorities="ROLE_USER,ROLE_ADMIN"  />
 				<user name="admin" password="admin" authorities="ROLE_ADMIN" />
 			</user-service>
 		</authentication-provider>

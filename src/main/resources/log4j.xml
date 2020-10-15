@@ -36,6 +36,10 @@
 		<level value="debug" />
 	</logger>
 
+	<logger name="org.springframework.security.access">
+		<level value="debug" />
+	</logger>
+
 	<!-- Root Logger -->
 	<root>
 		<priority value="warn" />
