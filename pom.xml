@@ -83,6 +83,19 @@
             <artifactId>spring-security-config</artifactId>
         </dependency>
 
+        <!-- чтобы Spring мог соединяться с БД -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
+        <!-- драйвер для соединения с БД -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
