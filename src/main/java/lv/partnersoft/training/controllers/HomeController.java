@@ -1,5 +1,6 @@
-package lv.partnersoft.training;
+package lv.partnersoft.training.controllers;
 
+import lv.partnersoft.training.services.ProcessInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class HomeController {
     @Autowired
     private AccessDecisionManager accessDecisionManager;
 
+    @Autowired
+    private ProcessInterface process;
+
     @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
     public ModelAndView accesssDenied(Principal user) {
 
@@ -47,6 +51,7 @@ public class HomeController {
     public String mainPage() {
         System.out.println(accessDecisionManager);
         printUserDetails();
+        logger.info(process.getMessage());
         return "/content/user";
     }
 
